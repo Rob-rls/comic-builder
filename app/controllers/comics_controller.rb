@@ -1,5 +1,6 @@
 class ComicsController < ApplicationController
     def index
+        @comics = Comic.all
     end
 
     def new
@@ -8,7 +9,8 @@ class ComicsController < ApplicationController
 
     def create
         @comic = Comic.new(comic_params)
-        redirect_to comics_path
+        @comic.save
+        redirect_to '/comics'
     end
 
     private
