@@ -1,0 +1,6 @@
+<h2>Give your comic strip a name</h2>
+<%= form_for @strip do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create Comic" %>
+<% end %>
