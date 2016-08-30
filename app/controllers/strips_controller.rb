@@ -12,10 +12,15 @@ class StripsController < ApplicationController
     @strip = Strip.new(strip_params)
     if @strip.save
       flash[:notice] = "New comic strip successfully created"
-      redirect_to strips_path
+      redirect_to "/strips/#{@strip.id}"
     else
       render "new"
     end
+  end
+
+  def show
+    @strip = Strip.find(params[:id])
+
   end
 
   private
