@@ -11,7 +11,6 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.save
-    # redirect_to comic_path()
   end
 
   private

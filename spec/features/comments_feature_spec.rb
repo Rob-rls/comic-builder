@@ -12,10 +12,9 @@ feature 'comment' do
       visit '/'
       click_link 'The Farside'
       expect(page).to have_content('Be the first to add a comment!')
-      click_link 'Add A Comment'
+      # click_link 'Add A Comment'
       fill_in 'Text', with: 'Much far, very side'
       click_button 'Post'
-      byebug
       expect(page).to have_content 'Much far, very side'
     end
   end

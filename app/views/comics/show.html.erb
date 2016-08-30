@@ -1,5 +1,15 @@
 <h1><%= @comic.title %></h1><br>
-
-<%= link_to "Add A Comment", new_comic_comment_path(@comic) %>
+<!-- <%= link_to "Add A Comment", new_comic_comment_path(@comic) %> -->
 
 Be the first to add a comment!
+
+<%= form_for Comment.new, url: comic_comments_path(@comic) do |f| %>
+
+  <p>
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </p>
+  <p>
+    <%= f.submit 'Post' %>
+  </p>
+<% end %>
