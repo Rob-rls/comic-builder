@@ -1,2 +1,3 @@
 <h2><%= @strip.name %></h2>
+<%= image_tag @strip.image.url(:medium) %>
 <%= link_to "Edit Strip", edit_strip_path(@strip) %>

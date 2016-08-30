@@ -8,7 +8,7 @@ feature 'comic strip' do
         visit '/strips/new'
         expect(page).to have_content "Give your comic strip a name"
         fill_in "Name", with: "First Comic"
-        click_button "Create Comic"
+        click_button "Create Strip"
         expect(page).to have_content "First Comic"
         expect(page).to have_content "New comic strip successfully created"
       end
@@ -23,7 +23,7 @@ feature 'comic strip' do
         expect(page).to have_content "First Comic"
         click_link "Edit Strip"
         fill_in "Name", with: "First Comic - version 2"
-        click_button "Update Comic"
+        click_button "Update Strip"
         expect(page).to have_content "First Comic - version 2"
         expect(page).to have_content "Comic strip was successfully updated"
       end
@@ -35,12 +35,11 @@ feature 'comic strip' do
       it 'can add the first photograph' do
         visit "/strips/#{@strip.id}"
         expect(page).to have_content "First Comic"
-        click_link "Add image"
-        page.attach_file "strip[image]", Rails.root + "spec/fixtures/kitty_1.jpeg"
-        click_button "Post Photo"
+        click_link "Edit Strip"
+        page.attach_file "strip[image]", Rails.root + "spec/fixtures/kitty_2.jpeg"
+        click_button "Update Strip"
         expect(page).to have_content "First Comic"
-        expect(page).to have_content "Photo has been successfully added"
-        expect(page).to have_xpath("//img[contains(@src,'kitty_1.jpeg')]")
+        expect(page).to have_xpath("//img[contains(@src,'kitty_2.jpeg')]")
       end
     end
   end
