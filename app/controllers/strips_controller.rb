@@ -20,7 +20,17 @@ class StripsController < ApplicationController
 
   def show
     @strip = Strip.find(params[:id])
+  end
 
+  def edit
+    @strip = Strip.find(params[:id])
+  end
+
+  def update
+    @strip = Strip.find(params[:id])
+    @strip.update(strip_params)
+    flash[:notice] = "Comic strip was successfully updated"
+    redirect_to "/strips/#{@strip.id}"
   end
 
   private

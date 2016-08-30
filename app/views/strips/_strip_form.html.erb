@@ -1,0 +1,9 @@
+<%= form_for @strip do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <% if current_page?(new_strip_path) %>
+    <%= f.submit "Create Comic" %>
+  <% else %>
+    <%= f.submit "Update Comic" %>
+  <% end %>
+<% end %>
