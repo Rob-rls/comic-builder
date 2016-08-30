@@ -25,7 +25,10 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
+<<<<<<< HEAD
   gem "nyan-cat-formatter"
   gem 'rspec-collection_matchers'
   gem 'shoulda-matchers'
+=======
+>>>>>>> 4449994986f863f792dca1154dce8f50cb60d6d9
 end
