@@ -13,6 +13,10 @@ class ComicsController < ApplicationController
         redirect_to '/comics'
     end
 
+    def show
+      @comic = Comic.find(params[:id])
+    end
+
     private
 
     def comic_params
