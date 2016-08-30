@@ -1,0 +1,9 @@
+<%= form_for @comment, url: comic_comments_path do |f| %>
+  <p>
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </p>
+  <p>
+    <%= f.submit 'Add A Comment' %>
+  </p>
+<% end %>
