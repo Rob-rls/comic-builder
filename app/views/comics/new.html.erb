@@ -1,1 +1,11 @@
 <h1>Create a comic</h1>
+<%= form_for @comic do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.submit "Save Comic" %>
+  </p>
+<% end %>
