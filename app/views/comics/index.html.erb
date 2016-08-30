@@ -1,0 +1,11 @@
+<h1>Comics!</h1>
+
+<%= link_to "Add Comic", new_comic_path %>
+
+<% if @comics.any? %>
+  <% @comics.each do |comic| %>
+    <h3>Title: <%= link_to comic.title, comic_path(comic) %></h3>
+  <% end %>
+<% else %>
+  <h2>No comics added.</h2>
+<% end %>

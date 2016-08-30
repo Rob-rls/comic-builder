@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :strips
+
+  get 'comics' => 'comics#index'
+
+  resources :comics do
+    resources :strips
+    resources :comments
+  end
+
+  root 'comics#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
