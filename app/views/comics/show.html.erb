@@ -1,7 +1,7 @@
 <h1><%= @comic.title %></h1><br>
+<%= link_to "Update your comic", edit_comic_path(@comic) %>
 
 <%= link_to "Add A Comment", new_comic_comment_path(@comic) %>
-
 
 <% if @comments.any? %>
   <ul>
