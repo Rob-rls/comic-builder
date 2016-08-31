@@ -7,18 +7,55 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="nav">
+  <div class="grid">
+    <div class="col-2">
+      <br />
+    </div>
+    <div class="col-8">
+      <ul>
+        <li class="logo">
 
-<% if user_signed_in? %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign In", new_user_session_path %>
-  <%= link_to "Sign Up", new_user_registration_path %>
-<% end %>
-
-<span class="alert"><%= alert %></span>
-<span class="notice"><%= notice %></span>
-
-<%= yield %>
+        </li>
+        <% if user_signed_in? %>
+          <li class="right">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li class="right">
+            <%= link_to "Sign In", new_user_session_path %>
+          </li>
+          <li class="right">
+            <%= link_to "Sign Up", new_user_registration_path %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-2">
+      <br />
+    </div>
+  </div>
+</div>
+<div class="alerts">
+  <div class="grid">
+    <div class="col-2">
+      <br />
+    </div>
+    <div class="col-8">
+      <span class="alert"><%= alert %></span>
+      <span class="notice"><%= notice %></span>
+    </div>
+    <div class="col-2">
+      <br />
+    </div>
+  </div>
+</div>
+<div class="grid">
+  <div class="col-2">
+    <br />
+  </div>
+  <article class="col-8">
+    <%= yield %>
 
 </body>
 </html>

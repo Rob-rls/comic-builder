@@ -1,17 +1,22 @@
-<h1>Comics!</h1>
+    <h1>Comics!</h1>
 
-<%= link_to "Add Comic", new_comic_path %>
+    <%= link_to "Add Comic", new_comic_path %>
 
-<% if @comics.any? %>
-  <% @comics.each do |comic| %>
-    <h3>Title: <%= link_to comic.title, comic_path(comic) %></h3><br>
-    <% if @strips.any? %>
-      <% strip = @strips.find_by(:comic_id => comic.id) %>
-      <%= image_tag strip.image.url(:thumb) %>
-      <%= image_tag strip.image2.url(:thumb) %>
-      <%= image_tag strip.image3.url(:thumb) %>
+    <% if @comics.any? %>
+      <% @comics.each do |comic| %>
+        <h3>Title: <%= link_to comic.title, comic_path(comic) %></h3><br>
+        <% if @strips.any? %>
+          <% strip = @strips.find_by(:comic_id => comic.id) %>
+          <%= image_tag strip.image.url(:thumb) %>
+          <%= image_tag strip.image2.url(:thumb) %>
+          <%= image_tag strip.image3.url(:thumb) %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <h2>No comics added.</h2>
     <% end %>
-  <% end %>
-<% else %>
-  <h2>No comics added.</h2>
-<% end %>
+  </article>
+  <div class="col-2">
+    <br />
+  </div>
+</div>
