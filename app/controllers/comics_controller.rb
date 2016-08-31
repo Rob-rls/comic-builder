@@ -16,7 +16,7 @@ class ComicsController < ApplicationController
 
     def show
       @comic = Comic.find(params[:id])
-      @strip = Strip.find(params[:strip_id])
+      @strip = Strip.find_by(:comic_id => params[:id])
       @comments = @comic.comments.all
     end
 
