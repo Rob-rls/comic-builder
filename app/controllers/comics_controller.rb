@@ -2,6 +2,7 @@ class ComicsController < ApplicationController
 
     def index
         @comics = Comic.all
+        @strips = Strip.all
     end
 
     def new

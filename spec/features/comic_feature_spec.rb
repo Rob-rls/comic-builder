@@ -45,4 +45,16 @@ feature 'comic' do
         expect(page).not_to have_content 'The Farside'
       end
     end
+
+    context 'when viewing the index page' do
+      before do
+        create_comic
+        create_strip
+      end
+
+      scenario 'can see a mini preview of the comic' do
+        visit '/'
+        expect(page).to have_xpath("//img[contains(@src,'kitty_2.jpeg')]")
+      end
+    end
 end
