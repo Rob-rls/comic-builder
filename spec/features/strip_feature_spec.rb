@@ -4,24 +4,17 @@ require_relative 'web_helpers'
 feature 'Strip' do
 
   context "After creating a new comic" do
-    #create_comic
-    let(:comic) { Comic.new(title: "New") }
-
-    describe 'a user can create a new comic strip' do
-      it 'creates a new comic with a name' do
-        visit "/"
-        click_link "New"
-        click_link "Add Strip"
+      scenario "user is ceating a new strip" do
+        create_comic
         expect(page).to have_content "Give your comic strip a name"
         fill_in "Name", with: "First Comic"
         click_button "Create Strip"
         expect(page).to have_content "First Comic"
         expect(page).to have_content "New comic strip successfully created"
       end
-    end
 
-    describe 'a user can edit a strip' do
-      it 'by changing its name' do
+      scenario 'user is editing strip name' do
+        create_comic
         fill_in "Name", with: "First Comic"
         click_button "Create Strip"
         click_link "Edit Strip"
@@ -30,7 +23,9 @@ feature 'Strip' do
         expect(page).to have_content "First Comic - version 2"
         expect(page).to have_content "Comic strip was successfully updated"
       end
-      it 'by adding first picture' do
+
+      scenario 'user is adding a picture to the strip' do
+        create_comic
         fill_in "Name", with: "First Comic"
         click_button "Create Strip"
         click_link "Edit Strip"
@@ -39,7 +34,6 @@ feature 'Strip' do
         expect(page).to have_content "First Comic"
         expect(page).to have_xpath("//img[contains(@src,'kitty_2.jpeg')]")
       end
-    end
   end
 
 end
