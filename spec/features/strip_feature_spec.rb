@@ -4,8 +4,12 @@ require_relative 'web_helpers'
 feature 'Strip' do
 
   context "After creating a new comic" do
-      scenario "user is ceating a new strip" do
-        create_comic
+    before do
+      sign_up('test@example.com')
+      create_comic
+    end
+    
+      scenario "user is creating a new strip" do
         expect(page).to have_content "Give your comic strip a name"
         fill_in "Name", with: "First Comic"
         click_button "Create Strip"
@@ -14,7 +18,6 @@ feature 'Strip' do
       end
 
       scenario 'user is editing strip name' do
-        create_comic
         fill_in "Name", with: "First Comic"
         click_button "Create Strip"
         click_link "Edit Strip"
@@ -25,7 +28,6 @@ feature 'Strip' do
       end
 
       scenario 'user is adding a picture to the strip' do
-        create_comic
         fill_in "Name", with: "First Comic"
         click_button "Create Strip"
         click_link "Edit Strip"
@@ -36,7 +38,6 @@ feature 'Strip' do
       end
 
       scenario 'user is adding multiple pictures and captions to the srip' do
-        create_comic
         fill_in "Name", with: "First Comic"
         page.attach_file "strip[image]", Rails.root + "spec/fixtures/kitty_2.jpeg"
         fill_in "Caption1", with: "first caption text"

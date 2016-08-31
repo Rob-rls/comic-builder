@@ -4,6 +4,7 @@ feature 'comment' do
 
   context 'visiting a comic page with no comments' do
     before do
+      sign_up('test@example.com')
       create_comic
     end
     scenario 'can add a comment' do
@@ -18,6 +19,9 @@ feature 'comment' do
   end
 
   context 'updating and deleting comments' do
+    before do
+      sign_up('test@example.com')
+    end
     let!(:comic) { Comic.create(title: "The Farside") }
     let!(:comment) { comic.comments.create(text: 'Much far, very side') }
     scenario "a user can update a comment" do
