@@ -37,5 +37,12 @@ feature 'comic' do
         click_button 'Save Comic'
         expect(page).to have_content 'Actually Monkeys Are Cooler'
       end
+
+      scenario 'user can delete comics' do
+        visit '/'
+        click_link 'The Farside'
+        click_link 'Delete comic'
+        expect(page).not_to have_content 'The Farside'
+      end
     end
 end

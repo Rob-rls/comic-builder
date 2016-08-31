@@ -30,6 +30,13 @@ class ComicsController < ApplicationController
       redirect_to comic_path(@comic.id)
     end
 
+    def destroy
+      @comic = Comic.find(params[:id])
+      @comic.destroy
+      redirect_to comics_path
+      flash[:notice] = 'Comic has been deleted'
+    end
+
     private
 
     def comic_params
