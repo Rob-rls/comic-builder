@@ -25,6 +25,14 @@ class CommentsController < ApplicationController
     redirect_to comic_path(@comic.id)
   end
 
+  def destroy
+    @comic = Comic.find(params[:comic_id])
+    @comment = @comic.comments.find(params[:id])
+    @comment.destroy
+    flash[:notice] = "Your comment has been deleted"
+    redirect_to comic_path(@comic.id)
+  end
+
   private
 
   def comment_params
