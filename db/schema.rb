@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831112105) do
+ActiveRecord::Schema.define(version: 20160831115403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +59,11 @@ ActiveRecord::Schema.define(version: 20160831112105) do
     t.string   "caption1"
     t.string   "caption2"
     t.string   "caption3"
+    t.integer  "comic_id"
   end
 
+  add_index "strips", ["comic_id"], name: "index_strips_on_comic_id", using: :btree
+
   add_foreign_key "comments", "comics"
+  add_foreign_key "strips", "comics"
 end

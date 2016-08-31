@@ -1,4 +1,5 @@
 class Strip < ActiveRecord::Base
+  belongs_to :comic
   has_attached_file :image, :styles => { :large => "900x900>", :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   has_attached_file :image2, :styles => { :large => "900x900>", :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   has_attached_file :image3, :styles => { :large => "900x900>", :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
