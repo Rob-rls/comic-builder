@@ -34,6 +34,18 @@ feature 'Strip' do
         expect(page).to have_content "First Comic"
         expect(page).to have_xpath("//img[contains(@src,'kitty_2.jpeg')]")
       end
+
+      scenario 'user is adding multiple pictures to the srip' do
+        create_comic
+        fill_in "Name", with: "First Comic"
+        page.attach_file "strip[image]", Rails.root + "spec/fixtures/kitty_2.jpeg"
+        page.attach_file "strip[image2]", Rails.root + "spec/fixtures/kitty_3.jpg"
+        page.attach_file "strip[image3]", Rails.root + "spec/fixtures/kitty_4.jpg"
+        click_button "Create Strip"
+        expect(page).to have_xpath("//img[contains(@src,'kitty_2.jpeg')]")
+        expect(page).to have_xpath("//img[contains(@src,'kitty_3.jpg')]")
+        expect(page).to have_xpath("//img[contains(@src,'kitty_4.jpg')]")
+      end
   end
 
 end

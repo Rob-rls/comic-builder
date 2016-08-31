@@ -3,6 +3,10 @@
   <%= f.text_field :name %>
   <%= f.label :image %>
   <%= f.file_field :image %>
+  <%= f.label :image2 %>
+  <%= f.file_field :image2 %>
+  <%= f.label :image3 %>
+  <%= f.file_field :image3 %>
   <% if current_page?(new_comic_strip_path) %>
     <%= f.submit "Create Strip" %>
   <% else %>
