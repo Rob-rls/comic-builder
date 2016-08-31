@@ -11,7 +11,7 @@ class ComicsController < ApplicationController
     def create
         @comic = Comic.new(comic_params)
         @comic.save
-        redirect_to '/comics'
+        redirect_to "/comics/#{@comic.id}/strips/new"
     end
 
     def show

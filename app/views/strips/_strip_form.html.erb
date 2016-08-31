@@ -1,0 +1,11 @@
+<%= form_for [@comic, @strip], html: { multipart: true } do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <% if current_page?(new_comic_strip_path) %>
+    <%= f.submit "Create Strip" %>
+  <% else %>
+    <%= f.submit "Update Strip" %>
+  <% end %>
+<% end %>
