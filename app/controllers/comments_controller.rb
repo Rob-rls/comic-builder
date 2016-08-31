@@ -1,9 +1,5 @@
 class CommentsController < ApplicationController
 
-  # def show
-  #   @comments = Comment.all
-  # end
-
   def new
     @comic = Comic.find(params[:comic_id])
     @comment = Comment.new
@@ -13,6 +9,19 @@ class CommentsController < ApplicationController
     @comic = Comic.find(params[:comic_id])
     @comment = @comic.comments.new(comment_params)
     @comment.save
+    redirect_to comic_path(@comic.id)
+  end
+
+  def edit
+    @comic = Comic.find(params[:comic_id])
+    @comment = @comic.comments.find(params[:id])
+  end
+
+  def update
+    @comic = Comic.find(params[:comic_id])
+    @comment = @comic.comments.find(params[:id])
+    @comment.update(comment_params)
+    flash[:notice] = "Your comment was updated"
     redirect_to comic_path(@comic.id)
   end
 
