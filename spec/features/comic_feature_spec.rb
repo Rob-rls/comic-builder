@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 feature 'comic' do
+  before do
+    sign_up('test@example.com')
+  end
+
     context 'when visiting the webpage with no comics' do
         scenario 'can add a comic' do
             visit '/'
