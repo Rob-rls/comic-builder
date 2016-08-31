@@ -4,14 +4,15 @@
 
 ## What I learned yesterday
 * paperclip
-* more rails ++
+* more rails +++
 * passing paramaters to the controller
-* migrations +
-* a bit about resources work in the routes config file
+* migrations ++
+* a bit about resources work in the routes config file +
 
 ## What I want to learn today
 * more rails ++
 * pathfinding +
+* attaching multiple pictures
 
 ## What is in our way
 * pathfinding +
