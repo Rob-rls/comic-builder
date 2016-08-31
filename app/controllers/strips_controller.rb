@@ -11,7 +11,8 @@ class StripsController < ApplicationController
 
   def create
     @comic = Comic.find(params[:comic_id])
-    @strip = Strip.new(strip_params)
+    @strip = Strip.new(strip_params) #@comic.strip.new(strip_params)
+    @strip.comic_id = params[:comic_id]
     if @strip.save
       flash[:notice] = "New comic strip successfully created"
       redirect_to "/comics/#{@comic.id}/strips/#{@strip.id}"
