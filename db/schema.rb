@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 20160830165010) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pictures", force: :cascade do |t|
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+  create_table "comments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "text"
+    t.integer  "comic_id"
   end
+
+  add_index "comments", ["comic_id"], name: "index_comments_on_comic_id", using: :btree
 
   create_table "strips", force: :cascade do |t|
     t.string   "name"
@@ -40,15 +40,6 @@ ActiveRecord::Schema.define(version: 20160830165010) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
-
-  create_table "comments", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "text"
-    t.integer  "comic_id"
-  end
-
-  add_index "comments", ["comic_id"], name: "index_comments_on_comic_id", using: :btree
 
   add_foreign_key "comments", "comics"
 end
