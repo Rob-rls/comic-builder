@@ -41,7 +41,7 @@ class StripsController < ApplicationController
   private
 
   def strip_params
-    params.require(:strip).permit(:name, :image)
+    params.require(:strip).permit(:name, :image, :image2, :image3)
   end
 
 end
