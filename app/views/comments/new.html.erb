@@ -1,0 +1,10 @@
+<%= form_for [@comic, @comment] do |f| %>
+
+  <p>
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </p>
+  <p>
+    <%= f.submit 'Post' %>
+  </p>
+<% end %>

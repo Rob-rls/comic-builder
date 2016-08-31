@@ -1,3 +1,14 @@
 <h1><%= @comic.title %></h1><br>
 
 <%= link_to "Add A Comment", new_comic_comment_path(@comic) %>
+
+
+<% if @comments.any? %>
+  <ul>
+  <% @comments.each do |comment| %>
+    <li><%= comment.text %></li>
+  <% end %>
+  </ul>
+<% else %>
+Be the first to add a comment!
+<% end %>
