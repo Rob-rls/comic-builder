@@ -6,7 +6,10 @@
 <% if @comments.any? %>
   <ul>
   <% @comments.each do |comment| %>
-    <li><%= comment.text %></li>
+    <li id="#{comment.id}">
+      <%= comment.text %>
+      <%= link_to "Update Comment", edit_comic_comment_path(comment.comic, comment) %>
+    </li>
   <% end %>
   </ul>
 <% else %>
