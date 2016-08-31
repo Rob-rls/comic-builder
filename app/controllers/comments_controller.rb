@@ -5,12 +5,15 @@ class CommentsController < ApplicationController
   # end
 
   def new
+    @comic = Comic.find(params[:comic_id])
     @comment = Comment.new
   end
 
   def create
-    @comment = Comment.new(comment_params)
+    @comic = Comic.find(params[:comic_id])
+    @comment = @comic.comments.new(comment_params)
     @comment.save
+    redirect_to comic_path(@comic.id)
   end
 
   private
