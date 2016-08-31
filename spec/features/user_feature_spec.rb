@@ -35,4 +35,24 @@ feature "User can sign in and out" do
       expect(page).not_to have_link('Sign Up')
     end
   end
+
+  context 'user is not logged in' do
+    let!(:comic){ Comic.create(title: 'Cute Kittens') }
+
+    scenario 'unsigned user cannot add a comic' do
+      visit '/'
+      click_link 'Add Comic'
+      expect(page).to have_content 'Sign in or sign up to add comic!'
+    end
+
+    scenario 'unsigned user cannot make changes to comics' do
+      visit '/'
+      click_link 'Cute Kittens'
+      expect(page).to have_content 'Sign In'
+      expect(page).not_to have_content 'Delete comic'
+      expect(page).not_to have_content 'Delete'
+      expect(page).not_to have_content 'Update your comic'
+      expect(page).not_to have_content 'Add A Comic'
+    end
+  end
 end
