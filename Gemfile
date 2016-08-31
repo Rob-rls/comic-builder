@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'dotenv-rails', group: [:development, :test], :require => 'dotenv/rails-now'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'devise'
 
 group :development, :test do
     gem 'byebug'
