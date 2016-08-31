@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'comics' => 'comics#index'
 
   resources :comics do
+    resources :strips
     resources :comments
   end
 
