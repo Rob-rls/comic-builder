@@ -1,12 +1,18 @@
 <%= form_for [@comic, @strip], html: { multipart: true } do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %><br>
   <%= f.label :image %>
   <%= f.file_field :image %>
+  <%= f.label :caption1 %>
+  <%= f.text_area :caption1 %><br>
   <%= f.label :image2 %>
   <%= f.file_field :image2 %>
+  <%= f.label :caption2 %>
+  <%= f.text_area :caption2 %><br>
   <%= f.label :image3 %>
   <%= f.file_field :image3 %>
+  <%= f.label :caption3 %>
+  <%= f.text_area :caption3 %><br>
   <% if current_page?(new_comic_strip_path) %>
     <%= f.submit "Create Strip" %>
   <% else %>
