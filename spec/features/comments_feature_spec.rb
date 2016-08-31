@@ -29,5 +29,13 @@ feature 'comment' do
       click_button 'Post'
       expect(page).to have_content 'Much far, very side. Wow!'
     end
+
+    scenario 'deleting a posted comment' do
+      visit '/'
+      click_link 'The Farside'
+      expect(page).to have_content('Much far, very side')
+      click_link 'Delete'
+      expect(page).not_to have_content 'Much far, very side'
+    end
   end
 end

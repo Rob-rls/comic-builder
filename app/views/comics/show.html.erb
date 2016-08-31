@@ -9,6 +9,7 @@
     <li id="#{comment.id}">
       <%= comment.text %>
       <%= link_to "Update Comment", edit_comic_comment_path(comment.comic, comment) %>
+      <%= link_to "Delete", comic_comment_path(comment.comic, comment), method: :delete %>
     </li>
   <% end %>
   </ul>
