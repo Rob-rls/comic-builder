@@ -20,6 +20,24 @@ class ComicsController < ApplicationController
       @comments = @comic.comments.all
     end
 
+    def edit
+      @comic = Comic.find(params[:id])
+    end
+
+    def update
+      @comic = Comic.find(params[:id])
+      @comic.update(comic_params)
+      flash[:notice] = 'Comic has been updated'
+      redirect_to comic_path(@comic.id)
+    end
+
+    def destroy
+      @comic = Comic.find(params[:id])
+      @comic.destroy
+      redirect_to comics_path
+      flash[:notice] = 'Comic has been deleted'
+    end
+
     private
 
     def comic_params

@@ -1,4 +1,6 @@
 class Comic < ActiveRecord::Base
-  has_one :strip
-  has_many :comments
+
+  has_one :strip, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
 end
