@@ -15,6 +15,16 @@ $(document).ready(function() {
     });
   });
 
+  $('form').submit(function(){
+    var style = document.querySelector(".comic-strip").style;
+    var inputbackground = document.querySelector("#stripbackground");
+    var inputcolor = document.querySelector("#stripcolor");
+    $('#stripcolor').append(function() {
+      inputbackground.value = style.backgroundColor;
+      inputcolor.value = style.color;
+    });
+  });
+
 // Code below watches for change in style attr and logs the changes
 // We should be able to use this somehow
   // document.documentElement.addEventListener('DOMAttrModified', function(e){
