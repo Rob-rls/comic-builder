@@ -24,6 +24,7 @@ class ComicsController < ApplicationController
 
     def edit
       @comic = Comic.find(params[:id])
+      @strip = Strip.find_by(:comic_id => params[:id])
     end
 
     def update
