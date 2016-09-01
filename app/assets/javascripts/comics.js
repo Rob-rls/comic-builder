@@ -8,4 +8,10 @@ $(document).ready(function() {
     });
   });
 
+  $('.comic-strip').append(function() {
+    var input = document.querySelector("#stripbackground");
+    var color = document.querySelector(".comic-strip");
+    input.value = color.style.backgroundColor;
+  });
+
 });
