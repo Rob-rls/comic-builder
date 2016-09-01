@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: white;
+    background-color: black;
     li.right {
       float: right;
       padding-top: 10px;
@@ -21,7 +21,7 @@
       }
       a {
           display: block;
-          color: black;
+          color: white;
           text-align: center;
           padding: 14px 8px;
           text-decoration: none;
@@ -30,11 +30,12 @@
     }
 }
 .logo {
+  padding: 7px 0px 0px 7px;
   font-size: 2em;
   // font-family: 'Nothing You Could Do', cursive;
   img {
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 400px;
   }
 }
 
