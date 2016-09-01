@@ -1,17 +1,28 @@
 $(document).ready(function() {
-  $('.color').colorPicker();
 
-  $('#change-border').click(function() {
-    var images = document.querySelectorAll(".float-image");
-    images.forEach(function(image){
-      image.style.borderColor='red';
+  $('.color').colorPicker({opacity: false}, function(){
+
+  });
+
+  $('#updatecolour').click(function(){
+    // event.preventDefault();
+    var style = document.querySelector(".comic-strip").style;
+    var inputbackground = document.querySelector("#stripbackground");
+    var inputcolor = document.querySelector("#stripcolor");
+    $('#stripcolor').append(function() {
+      inputbackground.value = style.backgroundColor;
+      inputcolor.value = style.color;
     });
   });
 
-  $('.comic-strip').append(function() {
-    var input = document.querySelector("#stripbackground");
-    var color = document.querySelector(".comic-strip");
-    input.value = color.style.backgroundColor;
-  });
+// Code below watches for change in style attr and logs the changes
+// We should be able to use this somehow
+  // document.documentElement.addEventListener('DOMAttrModified', function(e){
+  //   if (e.attrName === 'style') {
+  //     console.log('prevValue: ' + e.prevValue, 'newValue: ' + e.newValue);
+  //   }
+  // }, false);
+  //
+  // document.documentElement.style.display = 'block';
 
 });
