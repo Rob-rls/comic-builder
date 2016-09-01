@@ -1,8 +1,11 @@
 $(document).ready(function() {
   $('.color').colorPicker();
 
-  var changeBackground = function() {
-    var x = document.getElementByClassName("grid");
-    x.style.backgroundColor='red';
-  };
+  $('#change-border').click(function() {
+    var images = document.querySelectorAll(".float-image");
+    images.forEach(function(image){
+      image.style.borderColor='red';
+    });
+  });
+
 });
