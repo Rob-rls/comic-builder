@@ -4,8 +4,8 @@
 
 .comic-preview {
     overflow: auto;
-    background-color: yellow;
-    height: 220px;
+    background-color: rgb(225, 225, 0);
+    height: auto;
     width: 600px;
     margin: 2px;
     padding-left: 10px;
@@ -20,6 +20,15 @@
 .comic-strip {
 }
 
+.button {
+  background-color: rgb(225, 225, 0);
+  border-radius: 5px;
+  text-align: center;
+  border-width: 2px;
+  border-color: black;
+  width: 100px;
+}
+
 .cell {
     float: left;
     width: 300px;
@@ -28,7 +37,8 @@
 .preview-cell {
     float: left;
     width: 100px;
-    height: 120px;
+    height: auto;
+    padding-bottom: 10px;
 }
 
 
@@ -64,6 +74,7 @@
     background-color: black;
     color: white;
     text-align: center;
+    font-size: 8px;
 }
 
 .comments {

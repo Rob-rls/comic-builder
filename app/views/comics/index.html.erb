@@ -1,10 +1,10 @@
     <h1>Comics!</h1>
 
-    <%= link_to "Add Comic", new_comic_path %>
+    <div class = 'button'> <%= link_to "Add Comic", new_comic_path %> </div>
 
     <% if @comics.any? %>
       <% @comics.each do |comic| %>
-        <div class="comic-preview">
+        <div class="comic-preview" >
           <h3>Title: <%= link_to comic.title, comic_path(comic) %></h3><br>
           <% if @strips.any? %>
             <% strip = @strips.find_by(:comic_id => comic.id) %>
