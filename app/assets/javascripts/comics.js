@@ -15,9 +15,9 @@ $(document).ready(function() {
 
   $('form').submit(function(){
     var style = document.querySelector(".comic-strip").style;
-    var inputbackground = document.querySelector("#stripbackground");
-    var inputcolor = document.querySelector("#stripcolor");
-    $('#stripcolor').append(function() {
+    var inputbackground = document.querySelector("#comic_stripbackground");
+    var inputcolor = document.querySelector("#comic_stripcolor");
+    $('#comic_stripcolor').append(function() {
       inputbackground.value = style.backgroundColor;
       inputcolor.value = style.color;
     });

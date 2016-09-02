@@ -45,6 +45,6 @@ class ComicsController < ApplicationController
     private
 
     def comic_params
-        params.require(:comic).permit(:title)
+        params.require(:comic).permit(:title, :stripbackground, :stripcolor)
     end
 end
