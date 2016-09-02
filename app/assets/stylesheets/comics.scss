@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.comic-preview {
+    overflow: auto;
+    background-color: rgb(225, 225, 0);
+    height: auto;
+    width: 600px;
+    margin: 2px;
+    padding-left: 10px;
+    border-radius: 15px;
+    border: 2px solid #000000;
+}
+
 .clearfix{
     overflow: auto;
 }
@@ -9,22 +20,61 @@
 .comic-strip {
 }
 
+.button {
+  background-color: rgb(225, 225, 0);
+  border-radius: 5px;
+  text-align: center;
+  border-width: 2px;
+  border-color: black;
+  width: 100px;
+}
+
 .cell {
     float: left;
-    width: 310px;
+    width: 300px;
 }
+
+.preview-cell {
+    float: left;
+    width: 100px;
+    height: auto;
+    padding-bottom: 10px;
+}
+
 
 .float-image {
     float: center;
     border: 5px solid black;
     width: 300px;
     height: 300px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+}
+
+.float-preview-image {
+    float: center;
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
 }
 
 .float-caption {
     background-color: black;
     color: white;
     text-align: center;
+}
+
+.float-preview-caption {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 8px;
 }
 
 .comments {

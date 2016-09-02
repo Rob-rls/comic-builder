@@ -1,11 +1,32 @@
-      <h2><%= @strip.name %></h2>
-      <%= image_tag @strip.image.url(:medium) %>
-      <%= image_tag @strip.image2.url(:medium) %>
-      <%= image_tag @strip.image3.url(:medium) %><br>
-      <%= @strip.caption1 %>
-      <%= @strip.caption2 %>
-      <%= @strip.caption3 %>
-      <%= link_to "Edit Strip", edit_comic_strip_path(@comic, @strip) %>
+    <h2><%= @strip.name %></h2>
+    <div class="comic-strip clearfix" >
+      <div class="cell">
+        <div class="float-image">
+          <%= image_tag @strip.image.url(:medium) %>
+        </div>
+        <div class="float-caption">
+          <%= @strip.caption1 %>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="float-image">
+          <%= image_tag @strip.image2.url(:medium) %>
+        </div>
+        <div class="float-caption">
+          <%= @strip.caption2 %>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="float-image">
+          <%= image_tag @strip.image3.url(:medium) %>
+        </div>
+        <div class="float-caption">
+          <%= @strip.caption3 %>
+        </div>
+      </div>
+    </div>
+    <%= link_to "Edit Strip", edit_comic_strip_path(@comic, @strip) %>
+
     </article>
   <div class="col-2">
     <br />
