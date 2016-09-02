@@ -8,7 +8,7 @@ feature 'Strip' do
       sign_up('test@example.com')
       create_comic
     end
-    
+
       scenario "user is creating a new strip" do
         expect(page).to have_content "Give your comic strip a name"
         fill_in "Name", with: "First Comic"
@@ -20,6 +20,7 @@ feature 'Strip' do
       scenario 'user is editing strip name' do
         fill_in "Name", with: "First Comic"
         click_button "Create Strip"
+        click_link "Update your comic"
         click_link "Edit Strip"
         fill_in "Name", with: "First Comic - version 2"
         click_button "Update Strip"
@@ -30,6 +31,7 @@ feature 'Strip' do
       scenario 'user is adding a picture to the strip' do
         fill_in "Name", with: "First Comic"
         click_button "Create Strip"
+        click_link "Update your comic"
         click_link "Edit Strip"
         page.attach_file "strip[image]", Rails.root + "spec/fixtures/kitty_2.jpeg"
         click_button "Update Strip"
