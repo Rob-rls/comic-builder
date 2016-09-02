@@ -1,19 +1,17 @@
 $(document).ready(function() {
 
-  $('.color').colorPicker({opacity: false}, function(){
+  $('.color').colorPicker({opacity: false});
 
-  });
-
-  $('#updatecolour').click(function(){
-    // event.preventDefault();
-    var style = document.querySelector(".comic-strip").style;
-    var inputbackground = document.querySelector("#stripbackground");
-    var inputcolor = document.querySelector("#stripcolor");
-    $('#stripcolor').append(function() {
-      inputbackground.value = style.backgroundColor;
-      inputcolor.value = style.color;
-    });
-  });
+  // $('#updatecolour').click(function(){
+  //   // event.preventDefault();
+  //   var style = document.querySelector(".comic-strip").style;
+  //   var inputbackground = document.querySelector("#stripbackground");
+  //   var inputcolor = document.querySelector("#stripcolor");
+  //   $('#stripcolor').append(function() {
+  //     inputbackground.value = style.backgroundColor;
+  //     inputcolor.value = style.color;
+  //   });
+  // });
 
   $('form').submit(function(){
     var style = document.querySelector(".comic-strip").style;

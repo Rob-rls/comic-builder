@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.comic-preview {
+    overflow: auto;
+    background-color: rgb(225, 225, 0);
+    height: auto;
+    width: 600px;
+    margin: 2px;
+    padding-left: 10px;
+    border-radius: 15px;
+    border: 2px solid #000000;
+}
+
 .clearfix{
     overflow: auto;
 }
@@ -12,9 +23,27 @@
   display: inline-block;
 }
 
+.button {
+  background-color: rgb(225, 225, 0);
+  border-radius: 5px;
+  text-align: center;
+  border-width: 2px;
+  border-color: black;
+  width: 100px;
+}
+
 .cell {
   display: inline-block;
+    // width: 300px;
 }
+
+.preview-cell {
+    float: left;
+    width: 100px;
+    height: auto;
+    padding-bottom: 10px;
+}
+
 
 .float-image {
     float: center;
@@ -27,9 +56,27 @@
     }
 }
 
+.float-preview-image {
+    float: center;
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+}
+
 .float-caption {
     text-align: center;
     padding: 10px 0 15px 0;
+}
+
+.float-preview-caption {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 8px;
 }
 
 .comments {

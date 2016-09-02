@@ -7,7 +7,14 @@
     background-color: black;
     li.right {
       float: right;
-      padding-top: 10px;
+      padding-top: 20px;
+      padding-right: 10px;
+      font-family: 'Waiting for the Sunrise', cursive;
+      font-size: 2em;
+    }
+    li.left {
+      float: left;
+      padding-top: 20px;
       font-family: 'Waiting for the Sunrise', cursive;
       font-size: 2em;
     }
@@ -26,6 +33,9 @@
           padding: 14px 8px;
           text-decoration: none;
           :hover:not(.active) {background-color: white;}
+      }
+      a:hover {
+        color: yellow;
       }
     }
 }

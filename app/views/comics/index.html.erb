@@ -1,16 +1,41 @@
     <h1>Comics!</h1>
 
-    <%= link_to "Add Comic", new_comic_path %>
+    
 
     <% if @comics.any? %>
       <% @comics.each do |comic| %>
-        <h3>Title: <%= link_to comic.title, comic_path(comic) %></h3><br>
-        <% if @strips.any? %>
-          <% strip = @strips.find_by(:comic_id => comic.id) %>
-          <%= image_tag strip.image.url(:thumb) %>
-          <%= image_tag strip.image2.url(:thumb) %>
-          <%= image_tag strip.image3.url(:thumb) %>
-        <% end %>
+        <div class="comic-preview" >
+          <h3>Title: <%= link_to comic.title, comic_path(comic) %></h3><br>
+          <% if @strips.any? %>
+            <% strip = @strips.find_by(:comic_id => comic.id) %>
+            <div class="comic-strip clearfix" >
+              <div class="preview-cell">
+                <div class="float-preview-image">
+                  <%= image_tag strip.image.url(:thumb) %>
+                </div>
+                <div class="float-preview-caption">
+                  <%= strip.caption1 %>
+                </div>
+              </div>
+              <div class="preview-cell">
+                <div class="float-preview-image">
+                  <%= image_tag strip.image2.url(:thumb) %>
+                </div>
+                <div class="float-preview-caption">
+                  <%= strip.caption2 %>
+                </div>
+              </div>
+              <div class="preview-cell">
+                <div class="float-preview-image">
+                  <%= image_tag strip.image3.url(:thumb) %>
+                </div>
+                <div class="float-preview-caption">
+                  <%= strip.caption3 %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
       <% end %>
     <% else %>
       <h2>No comics added.</h2>

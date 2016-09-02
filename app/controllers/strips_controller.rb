@@ -20,7 +20,7 @@ class StripsController < ApplicationController
       render "new"
     end
   end
-
+  
   def show
     @comic = Comic.find(params[:comic_id])
     @strip = Strip.find(params[:id])
