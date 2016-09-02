@@ -6,16 +6,25 @@ feature 'comic' do
   end
 
     context 'when visiting the webpage with no comics' do
-        scenario 'can add a comic' do
-            visit '/'
-            expect(page).to have_content('No comics added')
-            click_link('Add Comic')
-            fill_in('Title', with: 'The Farside')
-            click_button('Save Comic')
-            visit '/'
-            expect(page).to have_content('Title: The Farside')
-            expect(page).not_to have_content('No comics added')
-        end
+      scenario 'can add a comic' do
+        visit '/'
+        expect(page).to have_content('No comics added')
+        click_link('Add Comic')
+        fill_in('Title', with: 'The Farside')
+        click_button('Save Comic')
+        visit '/'
+        expect(page).to have_content('Title: The Farside')
+        expect(page).not_to have_content('No comics added')
+      end
+
+      scenario 'User can not enter an empty title' do
+        visit '/'
+        click_link('Add Comic')
+        fill_in('Title', with: '')
+        click_button('Save Comic')
+        expect(current_path).to eq '/comics'
+        expect(page).to have_content 'Don\'t be lazy, enter a title'
+      end
     end
 
     context 'can view the comic page' do

@@ -1,0 +1,29 @@
+
+  <% if @strip != nil %>
+  <div class="comic-strip clearfix" >
+    <div class="preview-cell">
+      <div class="float-preview-image">
+        <%= image_tag @strip.image.url(:thumb) %>
+      </div>
+      <div class="float-preview-caption">
+        <%= @strip.caption1 %>
+      </div>
+    </div>
+    <div class="preview-cell">
+      <div class="float-preview-image">
+        <%= image_tag @strip.image2.url(:thumb) %>
+      </div>
+      <div class="float-preview-caption">
+        <%= @strip.caption2 %>
+      </div>
+    </div>
+    <div class="preview-cell">
+      <div class="float-preview-image">
+        <%= image_tag @strip.image3.url(:thumb) %>
+      </div>
+      <div class="float-preview-caption">
+        <%= @strip.caption3 %>
+      </div>
+    </div>
+  </div>
+  <% end %>
