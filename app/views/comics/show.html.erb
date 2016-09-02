@@ -7,30 +7,7 @@
       <% if @strip %>
         <h2><%= @strip.name %></h2>
         <div class="comic-strip clearfix" >
-          <div class="cell">
-            <div class="float-image">
-              <%= image_tag @strip.image.url(:medium) %>
-            </div>
-            <div class="float-caption">
-              <%= @strip.caption1 %>
-            </div>
-          </div>
-          <div class="cell">
-            <div class="float-image">
-              <%= image_tag @strip.image2.url(:medium) %>
-            </div>
-            <div class="float-caption">
-              <%= @strip.caption2 %>
-            </div>
-          </div>
-          <div class="cell">
-            <div class="float-image">
-              <%= image_tag @strip.image3.url(:medium) %>
-            </div>
-            <div class="float-caption">
-              <%= @strip.caption3 %>
-            </div>
-          </div>
+          <%= render "./strips/strip_view" %>
         </div>
       <% end %>
       <br />
