@@ -1,5 +1,7 @@
 <%= form_for @comic do |f| %>
   <%= f.label :title %><br>
   <%= f.text_field :title %>
+  <input type='hidden' name="stripbackground" value="" id="stripbackground">
+  <input type='hidden' name="stripcolor" value="" id="stripcolor">
   <%= f.submit "Save Comic" %>
 <% end %>
