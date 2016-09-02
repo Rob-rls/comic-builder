@@ -30,13 +30,13 @@
               </div>
             </div>
           </div>
+          <%= link_to "Edit Strip", edit_comic_strip_path(@comic, @strip) %>
+          <% else %>
+          <br>
+          <%= link_to "Add Strip", new_comic_strip_path(@comic, @strip) %>
         <% end %>
       <br>
       <br>
-        <%= link_to "Edit Strip", edit_comic_strip_path(@comic, @strip) %>
-      <% else %>
-      <br>
-        <%= link_to "Add Strip", new_comic_strip_path(@comic, @strip) %>
       <% end %>
     </article>
   <div class="col-2">
