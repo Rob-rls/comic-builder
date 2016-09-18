@@ -12,7 +12,7 @@ $ rails s
 ```
 * Then use your browser to navigae to http://localhost:3000/
 
-
+![home_page](/Comic Builder.png)
 
 Contributors
 ------------
