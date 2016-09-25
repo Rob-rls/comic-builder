@@ -1,6 +1,6 @@
 Comic Builder
 =============
-This little web app lets users build a simple 3 picture comic strip.  Comic Strip Builder is created with Ruby on Rails with a dash of  JavaScript & JQuery and [TinyColorPicker](http://www.dematte.at/tinyColorPicker/).  The app was build in only 3.5 days as a project to learn how to develop applications.
+This little web app lets users build a  3 picture comic strip with a title and captions.  The user can also style the colour of the boarder.  Comic Strip Builder is created with Ruby on Rails with a dash of  JavaScript & JQuery and [TinyColorPicker](http://www.dematte.at/tinyColorPicker/).  The app was built in only 3.5 days as a project to learn how to develop applications at [Makers Academy](http://www.makersacademy.com/).
 
 Instructions
 ------------
@@ -14,7 +14,7 @@ $ rails s
 ```
 * Then use your browser to navigae to http://localhost:3000/
 
-![home](/Comic Builder.png)
+![home_page](/Comic Builder.png)
 
 Known Issues
 ------------
