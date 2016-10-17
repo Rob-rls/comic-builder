@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jqColorPicker.min.js
+//= require turbolinks
 //= require_tree .
